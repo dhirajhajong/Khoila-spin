@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khoila-Spin</title>
+  <style>
+
+
+body{
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .pause-btn{
+      display: none;
+    }
+
+    .resume-btn{
+      display: none;
+    }
+
+    .pause-btn-label{
+      background-color: red;
+      color: white;
+      font-size: 20px;
+      font-family: Arial;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-right: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .resume-btn-label{
+      background-color: rgb(51, 213, 30);
+      color: white;
+      font-size: 20px;
+      font-family: Arial;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-right: 180px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .pause-btn-label:hover, .resume-btn-label:hover{
+      opacity: 0.7;
+    }
+
+    .pause-btn:checked ~ p{
+      animation-play-state: paused;
+    }
+
+    .resume-btn:checked ~ p{
+      animation-play-state: running;
+    }
+
+    .this-will-spin{
+      color: white;
+      background-color: #0071ff;
+      display: flex;
+      width: 215px;
+      height: 215px;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-family: Arial;
+
+      animation-name: spin;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    
+    @keyframes spin{
+        0%{
+
+        }
+        50%{
+          scale: 2;
+          transform: rotate(0deg);
+          border-radius: 0;
+        }
+        100%{
+          transform: rotate(360deg);
+          border-radius: 100%;
+          scale: 2;
+        }
+      }
+
+  </style>
+</head>
+<body>
+  <input type="radio" id="pause-btn" name="start-stop-btn" class="pause-btn">
+  <label for="pause-btn" class="pause-btn-label">Pause</label>
+  <input type="radio" id="resume-btn" name="start-stop-btn" class="resume-btn">
+  <label for="resume-btn" class="resume-btn-label">Resume</label>
+  <p class="this-will-spin">Khoila likes to spin</p>
+</body>
+</html>
